@@ -7,7 +7,7 @@ const Films = () => {
     const param = useParams();
     const Page = param.page;
     const history = useNavigate();
-    // document.body.style.backgroundColor = 'white';
+    document.body.style.background = 'linear-gradient(to bottom right, #ffffff 0%, #000000 100%)';
     const [genres, setGenres] = useState();
     const [name, setName] = useState();
     const [items, setItems] = useState();

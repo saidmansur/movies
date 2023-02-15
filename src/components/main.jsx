@@ -4,7 +4,7 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import Header from "./search";
 import Navbar from "./navbar";
 const Main = () => {
-    // document.body.style.backgroundColor = 'white';
+    document.body.style.background = 'linear-gradient(to left, #000066 25%, #66ff99 82%)';
     const [genres, setGenres] = useState();
     const [name, setName] = useState();
     const [items, setItems] = useState();

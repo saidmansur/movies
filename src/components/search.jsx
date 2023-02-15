@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 const Search = () => {
-  document.body.style.background = 'linear-gradient(to bottom right, #ffffff 0%, #000000 100%)';
+  // document.body.style.background = 'linear-gradient(to bottom right, #ffffff 0%, #000000 100%)';
   const history = useNavigate();
   const [id, setId] = useState("");
   const [responseObj, setResponseObj] = useState({});

@@ -18,7 +18,7 @@ const Show = () => {
     const [key, setKey] = useState(null);
     const [items2, setItems2] = useState(null);
     const [recomindation, setRecomindation] = useState();
-    document.body.style.backgroundColor = '';
+    // document.body.style.backgroundColor = '';
     const visit = async () => {
         const param = {
             'id': id,

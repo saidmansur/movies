@@ -12,7 +12,7 @@ const Sgenre = () => {
     const [release_date, setReleasedate] = useState();
     const param = useParams();
     const id = param.id;
-  document.body.style.backgroundColor='white';
+//   document.body.style.backgroundColor='white';
   const sgenre = async () => {
 
     const gname = await axios({
