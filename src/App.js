@@ -1,25 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Main from './components/main';
+import Films from './components/films';
+import Serials from './components/serials';
+import Show from './components/show';
+import Sgenre from './components/sgenre';
+import Sshow from './components/sshow';
+const App = ()=>{
+    return (
+      <div className="container-fluid">
+        <Router>
+          <Routes>
+            <Route path='/sgenre/:id' element={<Sgenre/>}/>
+            <Route path='/show/:id' element={<Show/>}/>
+            <Route path='/serials/:page' element={<Serials/>}/>
+            <Route path='/films/:page' element={<Films />} />
+            <Route path="/" element={<Main />} />
+            <Route path='/sshow/:id' element={<Sshow/>}/>
+          </Routes>
+        </Router>
+      </div>
+    );
 }
 
 export default App;
