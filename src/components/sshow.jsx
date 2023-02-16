@@ -161,7 +161,7 @@ const Sshow = () => {
         </div>
         <div className="col-12 mt-5">
           <div className="row">
-            <div className="col-3 text-dark">
+            <div className="col-3 text-light">
               <img
                 src={
                   "https://www.themoviedb.org/t/p/w600_and_h900_bestv2" +
