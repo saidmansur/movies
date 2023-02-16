@@ -19,7 +19,7 @@ const Sshow = () => {
   const [items2, setItems2] = useState(null);
   const [recomindation, setRecomindation] = useState();
   document.body.style.background =
-    'linear-gradient(to bottom right, #000000 25%, #ff0000 82%)';
+    "linear-gradient(to bottom right, #000000 25%, #ff0000 82%)";
   const visit = async () => {
     const param = {
       id: id,

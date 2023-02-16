@@ -134,8 +134,8 @@ const Serials = () => {
                               "https://www.themoviedb.org/t/p/w600_and_h900_bestv2" +
                               item.poster_path
                             }
-                            width="300px"
-                            height="300px"
+                            width="100%"
+                            height="auto"
                           />
                           <p>
                             <b>{item.name}</b>
@@ -143,7 +143,11 @@ const Serials = () => {
                           <p>{item.original_name}</p>
                         </Link>
                       </div>
-                      <div className="col-9">
+                      <div
+                        className="col-9 overview"
+                        width="100%"
+                        height="auto"
+                      >
                         <b>Описание:</b>
                         <p>{item.overview}</p>
                         <b>Дата выхода:</b>
