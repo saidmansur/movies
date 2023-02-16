@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Header from "./search";
 import Navbar from "./navbar";
 const Main = () => {
@@ -65,6 +65,10 @@ const Main = () => {
     genre();
     movies();
   }, []);
+  var moment = require('moment');
+  require("moment/min/locales.min");
+  moment.locale('ru');
+  moment().zone("+06:00");
 
   return (
     <>
@@ -115,7 +119,8 @@ const Main = () => {
                         <b>Описание:</b>
                         <p>{item.overview}</p>
                         <b>Дата выхода:</b>
-                        <p>{item.release_date}</p>
+                        <p>{moment(item.release_date).format("Do MMM YYYY")
+                    }</p>
                       </div>
                     </div>
                   </div>

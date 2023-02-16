@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Header from "./search";
 import Navbar from "./navbar";
 const Sshow = () => {
@@ -146,6 +146,10 @@ const Sshow = () => {
     similar();
     recomindations();
   }, []);
+  var moment = require('moment');
+  require("moment/min/locales.min");
+  moment.locale('ru');
+  moment().zone("+06:00");
   return (
     <>
       <div className="row">
@@ -176,7 +180,8 @@ const Sshow = () => {
               <h4>
                 Дата выхода:
                 <br />
-                {first_air_date}
+                {moment(first_air_date).format("Do MMM YYYY")
+                    }
               </h4>
               <h4>
                 Жанры:

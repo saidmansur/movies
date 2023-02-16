@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 const Sgenre = () => {
   const [genres, setGenres] = useState();
   const [name, setName] = useState();

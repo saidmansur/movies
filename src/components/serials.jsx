@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Header from "./search";
 import Navbar from "./navbar";
 const Serials = () => {
@@ -86,18 +86,10 @@ const Serials = () => {
       console.log(page);
     }
   }
-  //   const checkPages = () => {
-  //     if (page != 0) {
-  //       const check = page.filter(i => i.page == page && i.page == page);
-  //       if (check.length = 2) {
-  //         return false;
-  //       } else {
-  //         return true;
-  //       }
-  //     } else {
-  //       return false;
-  //     }
-  //   }
+  var moment = require('moment');
+  require("moment/min/locales.min");
+  moment.locale('ru');
+  moment().zone("+06:00");
   return (
     <>
       <div className="row">
@@ -151,7 +143,8 @@ const Serials = () => {
                         <b>Описание:</b>
                         <p>{item.overview}</p>
                         <b>Дата выхода:</b>
-                        <p>{item.first_air_date}</p>
+                        <p>{moment(item.first_air_date).format("Do MMM YYYY")
+                    }</p>
                       </div>
                     </div>
                   </div>

@@ -89,7 +89,10 @@ const Films = () => {
       console.log(page);
     }
   }
-
+  var moment = require('moment');
+  require("moment/min/locales.min");
+  moment.locale('ru');
+  moment().zone("+06:00");
   return (
     <>
       <div className="row">
@@ -139,7 +142,8 @@ const Films = () => {
                         <b>Описание:</b>
                         <p>{item.overview}</p>
                         <b>Дата выхода:</b>
-                        <p>{item.release_date}</p>
+                        <p>{moment(item.release_date).format("Do MMM YYYY")
+                    }</p>
                       </div>
                     </div>
                   </div>
