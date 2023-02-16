@@ -18,7 +18,7 @@ const Show = () => {
     const [key, setKey] = useState(null);
     const [items2, setItems2] = useState(null);
     const [recomindation, setRecomindation] = useState();
-    // document.body.style.backgroundColor = '';
+    document.body.style.background = 'linear-gradient(to bottom right, #ffffff 0%, #000000 100%)';
     const visit = async () => {
         const param = {
             'id': id,
@@ -232,7 +232,8 @@ const Show = () => {
                             }
                         </div>
                     </div>
-                    <div className="col-12 mt-5 text-dark text-opacity-25">
+                    <div className="col-12 mt-5 text-dark text-opacity-15"
+                    >
                         <h2>Рекомеидаций</h2>
                         <div className="row">
                         {recomindation != null ?
