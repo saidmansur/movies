@@ -163,14 +163,14 @@ const Sshow = () => {
                   "https://www.themoviedb.org/t/p/w600_and_h900_bestv2" +
                   backdrop_path
                 }
-                width="300px"
-                height="300px"
+                width="100%"
+                height="auto"
               />
               <p>
                 <b>{name}</b>
               </p>
             </div>
-            <div className="col-8 ml-5 text-light">
+            <div className="col-8 ml-5 text-light overview">
               <h4 className="ml-5">Описание:</h4>
               <i>{overview}</i>
               <h4>
@@ -203,8 +203,8 @@ const Sshow = () => {
                       <div className="row mt-3">
                         <div className="col-12 d-flex justify-content-center">
                           <iframe
-                            width="800px"
-                            height="700px"
+                            width="650px"
+                            height="600px"
                             src={"https://www.youtube.com/embed/" + i.key}
                             title="YouTube video player"
                             frameborder="0"
@@ -237,8 +237,8 @@ const Sshow = () => {
                                 item.poster_path
                               }
                               className="fullsize-profile-picture"
-                              width="300px"
-                              height="300px"
+                              width="100%"
+                              height="auto"
                             />
                           </Link>
                         </button>
@@ -267,8 +267,8 @@ const Sshow = () => {
                                 i.poster_path
                               }
                               className="fullsize-profile-picture"
-                              width="300px"
-                              height="300px"
+                              width="100%"
+                              height="auto"
                             />
                           </Link>
                         </button>
