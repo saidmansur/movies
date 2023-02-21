@@ -51,7 +51,7 @@ const Sgenre = () => {
         <div className="col-10">
           <p>{title}</p>
           <div className="row">
-            {items != null ? (
+            {items != null ? 
               <>
                 {items.map((item) => (
                   <div className="col-12">
@@ -82,9 +82,9 @@ const Sgenre = () => {
                   </div>
                 ))}
               </>
-            ) : (
+             : 
               <></>
-            )}
+            }
           </div>
         </div>
       </div>

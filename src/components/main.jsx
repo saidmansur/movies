@@ -80,7 +80,7 @@ const Main = () => {
           <Header />
         </div>
         <div className="col-2 mt-5">
-          {genres != null ? (
+          {genres != null ? 
             <>
               {genres.map((i) => (
                 <div className="col-1">
@@ -88,13 +88,13 @@ const Main = () => {
                 </div>
               ))}
             </>
-          ) : (
+          : 
             <></>
-          )}
+          }
         </div>
         <div className="col-10 mt-5 text-light">
           <div className="row">
-            {items != null ? (
+            {items != null ? 
               <>
                 {items.map((item) => (
                   <div className="col-12">
@@ -126,9 +126,9 @@ const Main = () => {
                   </div>
                 ))}
               </>
-            ) : (
+            : 
               <></>
-            )}
+            }
           </div>
         </div>
       </div>

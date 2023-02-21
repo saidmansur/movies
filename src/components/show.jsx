@@ -180,7 +180,7 @@ const Show = () => {
               <h4>
                 Жанры:
                 <br />
-                {genres != null ? (
+                {genres != null ? 
                   <>
                     {genres.map((i) => (
                       <>
@@ -189,9 +189,9 @@ const Show = () => {
                       </>
                     ))}
                   </>
-                ) : (
+                 : 
                   <></>
-                )}
+                }
               </h4>
               <h4>
                 Кассовые сборы:
@@ -201,7 +201,7 @@ const Show = () => {
               </h4>
             </div>
             <div className="col-12 ">
-              {items2 != null ? (
+              {items2 != null ? 
                 <>
                   {items2.map((i) => (
                     <>
@@ -221,16 +221,16 @@ const Show = () => {
                     </>
                   ))}
                 </>
-              ) : (
+               : 
                 <>
                   <div class="spinner"></div>
                 </>
-              )}
+              }
             </div>
             <div className="col-12 text-light">
               <h2>Похожие фильмы</h2>
               <div className="row">
-                {items != null ? (
+                {items != null ? 
                   <>
                     {items.map((item) => (
                       <div className="col-3 mt-3">
@@ -250,17 +250,17 @@ const Show = () => {
                       </div>
                     ))}
                   </>
-                ) : (
+                 : 
                   <>
                     <div class="spinner"></div>
                   </>
-                )}
+                }
               </div>
             </div>
             <div className="col-12 mt-5 text-dark text-opacity-15">
               <h2>Рекомеидаций</h2>
               <div className="row">
-                {recomindation != null ? (
+                {recomindation != null ? 
                   <>
                     {recomindation.map((i) => (
                       <div className="col-3 mt-3">
@@ -280,11 +280,11 @@ const Show = () => {
                       </div>
                     ))}
                   </>
-                ) : (
+                 : 
                   <>
                     <div class="spinner"></div>
                   </>
-                )}
+                }
               </div>
             </div>
           </div>

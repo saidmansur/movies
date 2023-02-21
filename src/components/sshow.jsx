@@ -78,6 +78,39 @@ const Sshow = () => {
         setItems2(watchs.data.results);
         setKey(watchs.data.results.key);
       } else {
+        const param = {
+          id: id,
+        };
+        const user = await axios({
+          method: "get",
+          params: param,
+          url:
+            "https://api.themoviedb.org/3/tv/" +
+            id +
+            "?api_key=3cc05ada7e70628b8d1bf36e4d1f6fd7&language=ru-RU",
+          config: {
+            headers: {
+              "Content-type": "multipart/form-data",
+            },
+          },
+        });
+        console.log("id", param);
+        if (user != null) {
+          if (user.status == 200) {
+            setItems(user.data.results);
+            setBackdroppath(user.data.backdrop_path);
+            setOriginalname(user.data.original_name);
+            setName(user.data.name);
+            setOverview(user.data.overview);
+            setFirst_air_date(user.data.first_air_date);
+            setGenres(user.data.genres);
+            setRevenue(user.data.revenue);
+            console.log(user.data.results);
+          } else {
+            console.log("Error!");
+          }
+          console.log("items", user);
+        }
       }
       console.log("watch", watchs);
     }
@@ -146,9 +179,9 @@ const Sshow = () => {
     similar();
     recomindations();
   }, []);
-  var moment = require('moment');
+  var moment = require("moment");
   require("moment/min/locales.min");
-  moment.locale('ru');
+  moment.locale("ru");
   moment().zone("+06:00");
   return (
     <>
@@ -180,8 +213,7 @@ const Sshow = () => {
               <h4>
                 Дата выхода:
                 <br />
-                {moment(first_air_date).format("Do MMM YYYY")
-                    }
+                {moment(first_air_date).format("Do MMM YYYY")}
               </h4>
               <h4>
                 Жанры:
@@ -201,7 +233,7 @@ const Sshow = () => {
               </h4>
             </div>
             <div className="col-12 ">
-              {items2 != null ? (
+              {items2 != null ? 
                 <>
                   {items2.map((i) => (
                     <>
@@ -221,16 +253,26 @@ const Sshow = () => {
                     </>
                   ))}
                 </>
-              ) : (
+               : 
                 <>
-                  <div class="spinner"></div>
+                  <div class="col-12 d-flex justify-content-center">
+                  <img
+                              src={
+                                "https://www.themoviedb.org/t/p/w600_and_h900_bestv2" +
+                                poster_path
+                              }
+                              className="fullsize-profile-picture"
+                              width="100%"
+                              height="auto"
+                            />
+                  </div>
                 </>
-              )}
+              }
             </div>
             <div className="col-12 text-light">
               <h2>Похожие сериалы</h2>
               <div className="row">
-                {items != null ? (
+                {items != null ? 
                   <>
                     {items.map((item) => (
                       <div className="col-3 mt-3">
@@ -250,22 +292,22 @@ const Sshow = () => {
                       </div>
                     ))}
                   </>
-                ) : (
+                : 
                   <>
                     <div class="spinner"></div>
                   </>
-                )}
+                }
               </div>
             </div>
-            <div className="col-12 mt-5 text-dark text-opacity-25">
+            <div className="col-12 mt-5 text-light text-opacity-25">
               <h2>Рекомеидаций</h2>
               <div className="row">
-                {recomindation != null ? (
+                {recomindation != null ? 
                   <>
                     {recomindation.map((i) => (
                       <div className="col-3 mt-3">
                         <button onClick={refreshPage}>
-                          <Link to={"/show/" + i.id}>
+                          <Link to={"/sshow/" + i.id}>
                             <img
                               src={
                                 "https://www.themoviedb.org/t/p/w600_and_h900_bestv2" +
@@ -280,11 +322,11 @@ const Sshow = () => {
                       </div>
                     ))}
                   </>
-                ) : (
+                : 
                   <>
                     <div class="spinner"></div>
                   </>
-                )}
+                }
               </div>
             </div>
           </div>
