@@ -18,6 +18,8 @@ const Sshow = () => {
   const [key, setKey] = useState(null);
   const [items2, setItems2] = useState(null);
   const [recomindation, setRecomindation] = useState();
+  const [number_of_episodes, setNumberepisods] = useState();
+  const [number_of_seasons, setNumberseasons] = useState();
   document.body.style.background =
     "linear-gradient(to bottom right, #000000 25%, #ff0000 82%)";
   const visit = async () => {
@@ -48,6 +50,8 @@ const Sshow = () => {
         setFirst_air_date(user.data.first_air_date);
         setGenres(user.data.genres);
         setRevenue(user.data.revenue);
+        setNumberepisods(user.data.number_of_episodes);
+        setNumberseasons(user.data.number_of_seasons);
         console.log(user.data.results);
       } else {
         console.log("Error!");
@@ -209,28 +213,31 @@ const Sshow = () => {
             </div>
             <div className="col-8 ml-5 text-light overview">
               <h4 className="ml-5">Описание:</h4>
-              <i>{overview}</i>
+               <i>{overview}</i>
               <h4>
                 Дата выхода:
-                <br />
                 {moment(first_air_date).format("Do MMM YYYY")}
               </h4>
               <h4>
-                Жанры:
-                <br />
-                {genres != null ? (
+                Жанры: 
+                {genres != null ? 
                   <>
                     {genres.map((i) => (
                       <>
                         {i.name}
-                        <span> </span>
+                         <span> </span>
                       </>
                     ))}
                   </>
-                ) : (
+                 : 
                   <></>
-                )}
+                }
               </h4>
+              <h4>
+                Колличество эпизодов: {number_of_episodes}
+              </h4>
+              <h4>Колличество сезонов: {number_of_seasons} </h4>
+                
             </div>
             <div className="col-12 ">
               {items2 != null ? 

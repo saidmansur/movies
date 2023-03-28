@@ -32,6 +32,9 @@ const Search = () => {
     console.log("name", name);
     console.log("filter", tv);
   };
+  function refreshPage() {
+    window.location.reload(false);
+  }
   return (
     <>
       <div className="row">
@@ -52,7 +55,8 @@ const Search = () => {
             <>
               {movie.map((i) => (
                 <div className="col-12 mt-2">
-                  <Link to={"/show/" + i.id}>
+                  <button onClick={refreshPage} className='btn' >
+                  <a href={"/show/" + i.id}>
                     <img
                       class="rounded-circle border border-danger float-left"
                       src={
@@ -65,7 +69,8 @@ const Search = () => {
                     <b class="float-left mt-3 ml-2 font-weight-bolder">
                       {i.title}
                     </b>
-                  </Link>
+                  </a>
+                  </button>
                 </div>
               ))}
             </>
@@ -78,7 +83,8 @@ const Search = () => {
             <>
               {tv.map((item) => (
                 <div class="col-12 mt-2">
-                  <Link to={"/sshow/" + item.id}>
+                  <button onClick={refreshPage} className='btn' >
+                  <a href={"/sshow/" + item.id}>
                     <img
                       class="rounded-circle border border-danger float-left"
                       src={
@@ -91,7 +97,8 @@ const Search = () => {
                     <b class="float-left mt-3 ml-2 font-weight-bolder">
                       {item.name}
                     </b>
-                  </Link>
+                  </a>
+                  </button>
                 </div>
               ))}
             </>

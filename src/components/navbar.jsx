@@ -29,7 +29,7 @@ const Navbar = () => {
   const serials = async () => {
     const list = await axios({
       method: "get",
-      url: "https://api.themoviedb.org/3/tv/popular?api_key=3cc05ada7e70628b8d1bf36e4d1f6fd7&language=ru-RU&page=1",
+      url: "https://api.themoviedb.org/3/tv/airing_today?api_key=3cc05ada7e70628b8d1bf36e4d1f6fd7&language=ru-RU&page=1",
       config: {
         headers: {
           "Content-type": "multipart/form-data",

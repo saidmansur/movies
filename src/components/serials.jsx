@@ -25,7 +25,7 @@ const Serials = () => {
       method: "get",
       params: param,
       url:
-        "https://api.themoviedb.org/3/tv/popular?api_key=3cc05ada7e70628b8d1bf36e4d1f6fd7&language=ru-RU&page=" +
+        "https://api.themoviedb.org/3/tv/airing_today?api_key=3cc05ada7e70628b8d1bf36e4d1f6fd7&language=ru-RU&page=1" +
         page +
         "",
       config: {
@@ -86,9 +86,9 @@ const Serials = () => {
       console.log(page);
     }
   }
-  var moment = require('moment');
+  var moment = require("moment");
   require("moment/min/locales.min");
-  moment.locale('ru');
+  moment.locale("ru");
   moment().zone("+06:00");
   return (
     <>
@@ -100,7 +100,7 @@ const Serials = () => {
           <Header />
         </div>
         <div className="col-2 mt-5">
-          {genres != null ? 
+          {genres != null ? (
             <>
               {genres.map((i) => (
                 <div className="col-1">
@@ -108,13 +108,13 @@ const Serials = () => {
                 </div>
               ))}
             </>
-           : 
+          ) : (
             <></>
-          }
+          )}
         </div>
         <div className="col-10 mt-5 text-light">
           <div className="row">
-            {items != null ? 
+            {items != null ? (
               <>
                 {items.map((item) => (
                   <div className="col-12">
@@ -143,16 +143,17 @@ const Serials = () => {
                         <b>Описание:</b>
                         <p>{item.overview}</p>
                         <b>Дата выхода:</b>
-                        <p>{moment(item.first_air_date).format("Do MMM YYYY")
-                    }</p>
+                        <p>
+                          {moment(item.first_air_date).format("Do MMM YYYY")}
+                        </p>
                       </div>
                     </div>
                   </div>
                 ))}
               </>
-             : 
+            ) : (
               <></>
-            }
+            )}
           </div>
         </div>
         <div className="col-12">
